@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class product extends Model
 {
-    protected $fillable=['product_name','category_id','brand_id','product_short_description','product_long_description','product_image','publication_status'];
+    protected $fillable=['product_name','category_id','brand_id','product_short_description','product_price','product_long_description','product_image','publication_status'];
 
     public static function saveproductinfo($request)
     {
@@ -20,6 +20,7 @@ class product extends Model
         $product->brand_id =$request->brand_id;
         $product->product_name =$request->product_name;
         $product->product_short_description =$request->product_short_description;
+        $product->product_price =$request->product_price;
         $product->product_long_description =$request->product_long_description;
         $product->product_image = $directory.$imageName;
         $product->publication_status =$request->publication_status;

@@ -11,11 +11,9 @@
 						<form action="{{route('new-login')}}" method="post">
 							@csrf
 							<input type="text"  name ="email"  placeholder="email" />
-							<input type="text"  name="password" placeholder="password" />
+							<input type="password"  name="password" placeholder="password" />
 							<span>
-								<input type="checkbox" class="checkbox"> 
-								Keep me signed in
-							</span>
+								
 							<button type="submit" class="btn btn-default">Login</button>
 						</form>
 					</div><!--/login form-->
@@ -30,8 +28,8 @@
 						<form action="{{route('new-signup')}}" method="post">
 							@csrf
 							<input type="text"  name="name" placeholder="Name"/>
-							<input type="text"  name="email" placeholder="Email Address"/>
-							<input type="text"  name="password" placeholder="Password"/>
+							<input type="email"  name="email" placeholder="Email Address"/>
+							<input type="password"  name="password" placeholder="Password"/>
 							<input type="text"  name="phone" placeholder="phone"/>
 							<input type="text"  name="address" placeholder="address"/>
 							<button type="submit" class="btn btn-default">Signup</button>

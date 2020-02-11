@@ -55,6 +55,12 @@ ADD PRODUCT
         </div>
     </div>
     <div class="control-group">
+        <label class="control-label">product price</label>
+        <div class="controls">
+            <textarea class="input-xlarge" name="product_price" rows="3"></textarea>
+        </div>
+    </div>
+    <div class="control-group">
         <label class="control-label">product long description</label>
         <div class="controls">
             <textarea class="input-xxlarge" name="product_long_description" rows="3"></textarea>

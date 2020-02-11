@@ -7,6 +7,7 @@ use App\category;
 use App\brand;
 use App\product;
 use Session;
+use DB;
 
 class frontendController extends Controller
 {
@@ -38,4 +39,17 @@ class frontendController extends Controller
    		'products' =>product::where('brand_id',$id)->where('publication_status',1)->get()
    	]);
     }
+
+
+    public function productdetails($id)
+    {  
+     
+      return view('frontend.pages.product_details',[
+       'categories' =>category::where('publication_status',1)->get(),
+      'brands' =>   brand::where('publication_status',1)->get(),
+      'products' =>  product::find($id),
+       
+    ]);
+    }
+  
 }

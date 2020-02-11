@@ -28,25 +28,27 @@ class visitorController extends Controller
 
     public function newlogin(Request $request)
     { 
-    	   $visitor =visitor::where("email",$request->email)->first();
-    	   if($visitor){
-    		if (password_verify($request->password, $visitor->password)) {
-		    // echo 'Password is valid!';
-    			Session::put("visitor_id",$visitor->id);
-    	        Session::put("visitor_name",$visitor->name);
-    			return redirect('/');
-		    }
-		    else 
-		    {
-		    return redirect('/login-signup')->with("message","password not valid!!");
-		     }
-		      
-          }
-          else 
-		      {
-		      return redirect('/login-signup')->with("message","email not valid!!");
-		      }
-      }
+    	 // return $request->all(); 
+    	$visitor = visitor::where('email', $request->email)->first();
+
+    	if ($visitor) {
+
+    	if (password_verify($request->password, $visitor->password)) {
+    		Session::put("visitor_id",$visitor->id);
+    	    Session::put("visitor_name",$visitor->name);
+
+		    return redirect("/");
+			}
+
+		else {
+		 return redirect("/login-signup")->with("message","password not valid!!");
+	    }
+    		
+    	}
+    	 else{
+    	 	return redirect("/login-signup")->with("message","email not valid!!");
+    	 }
+    }
 
 
       public function visitorlogout(Request $request)

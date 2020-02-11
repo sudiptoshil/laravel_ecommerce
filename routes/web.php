@@ -21,8 +21,9 @@ Route::get('/login-signup', 'visitorController@index')->name('login-signup');
 Route::post('/new-signup', 'visitorController@newsignup')->name('new-signup');
 Route::post('/new-login', 'visitorController@newlogin')->name('new-login');
 Route::post('/visitor-logout', 'visitorController@visitorlogout')->name('visitor-logout');
-
-
+Route::get('/product-details/{id}', 'frontendController@productdetails')->name('product-details');
+Route::post('/add-to-cart', 'cartController@add_to_cart')->name('add-to-cart');
+Route::get('/show-cart', 'cartController@show_cart')->name('show-cart');
 
 
 

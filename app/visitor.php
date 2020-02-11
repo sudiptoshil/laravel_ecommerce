@@ -14,7 +14,7 @@ class visitor extends Model
     	$visitor = new visitor();
     	$visitor->name     = $request->name;
     	$visitor->email    = $request->email;
-    	$visitor->password = $request->password;
+    	$visitor->password = bcrypt($request->password);
     	$visitor->phone    = $request->phone;
     	$visitor->address  = $request->address;
     	$visitor->save();
